@@ -19,10 +19,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      # Этот шаг автоматически устанавливает SDK и принимает все лицензии
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Generate Gradle Wrapper & Build
+      - name: Generate Wrapper & Build APK
         run: |
           if [ ! -f "gradlew" ]; then
             gradle wrapper --gradle-version 8.4
